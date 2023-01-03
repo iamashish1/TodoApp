@@ -39,6 +39,13 @@ dependencies:
   shared_preferences: ^2.0.15
   flutter_native_splash: ^2.0.4
   flutter_bloc: ^8.0.1
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+  build_runner: ^2.3.3
+  dartz: ^0.10.1
+  get_it: ^7.2.0
+  uuid: ^3.0.7
+
 
 dev_dependencies:
   flutter_test:
