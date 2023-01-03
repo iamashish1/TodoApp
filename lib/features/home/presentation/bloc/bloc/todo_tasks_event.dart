@@ -9,5 +9,8 @@ class TodoTasksEvent with _$TodoTasksEvent {
 const factory TodoTasksEvent.delete(
       String id
     ) = _Delete;
+    const factory TodoTasksEvent.edit(
+     TodoModel todo
+    ) = _Edit;
   
 }

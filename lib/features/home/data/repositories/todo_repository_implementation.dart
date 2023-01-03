@@ -40,4 +40,16 @@ class TodoRepositoryImpl implements TodosRepository {
     }
    
   }
+  
+  @override
+  Future<Either<String, List<TodoModel>>> editTodo(TodoModel todo)async {
+
+      try {
+      final response = await localDataSource.editTodo(todo);
+      return Right(response);
+    } catch (e) {
+      return const Left('An Error occured');
+    }
+ 
+  }
 }

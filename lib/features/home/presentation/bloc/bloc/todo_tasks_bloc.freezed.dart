@@ -21,6 +21,7 @@ mixin _$TodoTasksEvent {
     required TResult Function() started,
     required TResult Function(TodoModel todo) create,
     required TResult Function(String id) delete,
+    required TResult Function(TodoModel todo) edit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$TodoTasksEvent {
     TResult? Function()? started,
     TResult? Function(TodoModel todo)? create,
     TResult? Function(String id)? delete,
+    TResult? Function(TodoModel todo)? edit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$TodoTasksEvent {
     TResult Function()? started,
     TResult Function(TodoModel todo)? create,
     TResult Function(String id)? delete,
+    TResult Function(TodoModel todo)? edit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$TodoTasksEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Create value) create,
     required TResult Function(_Delete value) delete,
+    required TResult Function(_Edit value) edit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$TodoTasksEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Create value)? create,
     TResult? Function(_Delete value)? delete,
+    TResult? Function(_Edit value)? edit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$TodoTasksEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Create value)? create,
     TResult Function(_Delete value)? delete,
+    TResult Function(_Edit value)? edit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function(TodoModel todo) create,
     required TResult Function(String id) delete,
+    required TResult Function(TodoModel todo) edit,
   }) {
     return started();
   }
@@ -130,6 +137,7 @@ class _$_Started implements _Started {
     TResult? Function()? started,
     TResult? Function(TodoModel todo)? create,
     TResult? Function(String id)? delete,
+    TResult? Function(TodoModel todo)? edit,
   }) {
     return started?.call();
   }
@@ -140,6 +148,7 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function(TodoModel todo)? create,
     TResult Function(String id)? delete,
+    TResult Function(TodoModel todo)? edit,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -154,6 +163,7 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Create value) create,
     required TResult Function(_Delete value) delete,
+    required TResult Function(_Edit value) edit,
   }) {
     return started(this);
   }
@@ -164,6 +174,7 @@ class _$_Started implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_Create value)? create,
     TResult? Function(_Delete value)? delete,
+    TResult? Function(_Edit value)? edit,
   }) {
     return started?.call(this);
   }
@@ -174,6 +185,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Create value)? create,
     TResult Function(_Delete value)? delete,
+    TResult Function(_Edit value)? edit,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -252,6 +264,7 @@ class _$_Create implements _Create {
     required TResult Function() started,
     required TResult Function(TodoModel todo) create,
     required TResult Function(String id) delete,
+    required TResult Function(TodoModel todo) edit,
   }) {
     return create(todo);
   }
@@ -262,6 +275,7 @@ class _$_Create implements _Create {
     TResult? Function()? started,
     TResult? Function(TodoModel todo)? create,
     TResult? Function(String id)? delete,
+    TResult? Function(TodoModel todo)? edit,
   }) {
     return create?.call(todo);
   }
@@ -272,6 +286,7 @@ class _$_Create implements _Create {
     TResult Function()? started,
     TResult Function(TodoModel todo)? create,
     TResult Function(String id)? delete,
+    TResult Function(TodoModel todo)? edit,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -286,6 +301,7 @@ class _$_Create implements _Create {
     required TResult Function(_Started value) started,
     required TResult Function(_Create value) create,
     required TResult Function(_Delete value) delete,
+    required TResult Function(_Edit value) edit,
   }) {
     return create(this);
   }
@@ -296,6 +312,7 @@ class _$_Create implements _Create {
     TResult? Function(_Started value)? started,
     TResult? Function(_Create value)? create,
     TResult? Function(_Delete value)? delete,
+    TResult? Function(_Edit value)? edit,
   }) {
     return create?.call(this);
   }
@@ -306,6 +323,7 @@ class _$_Create implements _Create {
     TResult Function(_Started value)? started,
     TResult Function(_Create value)? create,
     TResult Function(_Delete value)? delete,
+    TResult Function(_Edit value)? edit,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -389,6 +407,7 @@ class _$_Delete implements _Delete {
     required TResult Function() started,
     required TResult Function(TodoModel todo) create,
     required TResult Function(String id) delete,
+    required TResult Function(TodoModel todo) edit,
   }) {
     return delete(id);
   }
@@ -399,6 +418,7 @@ class _$_Delete implements _Delete {
     TResult? Function()? started,
     TResult? Function(TodoModel todo)? create,
     TResult? Function(String id)? delete,
+    TResult? Function(TodoModel todo)? edit,
   }) {
     return delete?.call(id);
   }
@@ -409,6 +429,7 @@ class _$_Delete implements _Delete {
     TResult Function()? started,
     TResult Function(TodoModel todo)? create,
     TResult Function(String id)? delete,
+    TResult Function(TodoModel todo)? edit,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -423,6 +444,7 @@ class _$_Delete implements _Delete {
     required TResult Function(_Started value) started,
     required TResult Function(_Create value) create,
     required TResult Function(_Delete value) delete,
+    required TResult Function(_Edit value) edit,
   }) {
     return delete(this);
   }
@@ -433,6 +455,7 @@ class _$_Delete implements _Delete {
     TResult? Function(_Started value)? started,
     TResult? Function(_Create value)? create,
     TResult? Function(_Delete value)? delete,
+    TResult? Function(_Edit value)? edit,
   }) {
     return delete?.call(this);
   }
@@ -443,6 +466,7 @@ class _$_Delete implements _Delete {
     TResult Function(_Started value)? started,
     TResult Function(_Create value)? create,
     TResult Function(_Delete value)? delete,
+    TResult Function(_Edit value)? edit,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -459,6 +483,148 @@ abstract class _Delete implements TodoTasksEvent {
   @JsonKey(ignore: true)
   _$$_DeleteCopyWith<_$_Delete> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_EditCopyWith<$Res> {
+  factory _$$_EditCopyWith(_$_Edit value, $Res Function(_$_Edit) then) =
+      __$$_EditCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TodoModel todo});
+}
+
+/// @nodoc
+class __$$_EditCopyWithImpl<$Res>
+    extends _$TodoTasksEventCopyWithImpl<$Res, _$_Edit>
+    implements _$$_EditCopyWith<$Res> {
+  __$$_EditCopyWithImpl(_$_Edit _value, $Res Function(_$_Edit) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? todo = null,
+  }) {
+    return _then(_$_Edit(
+      null == todo
+          ? _value.todo
+          : todo // ignore: cast_nullable_to_non_nullable
+              as TodoModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Edit implements _Edit {
+  const _$_Edit(this.todo);
+
+  @override
+  final TodoModel todo;
+
+  @override
+  String toString() {
+    return 'TodoTasksEvent.edit(todo: $todo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Edit &&
+            (identical(other.todo, todo) || other.todo == todo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, todo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EditCopyWith<_$_Edit> get copyWith =>
+      __$$_EditCopyWithImpl<_$_Edit>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TodoModel todo) create,
+    required TResult Function(String id) delete,
+    required TResult Function(TodoModel todo) edit,
+  }) {
+    return edit(todo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TodoModel todo)? create,
+    TResult? Function(String id)? delete,
+    TResult? Function(TodoModel todo)? edit,
+  }) {
+    return edit?.call(todo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TodoModel todo)? create,
+    TResult Function(String id)? delete,
+    TResult Function(TodoModel todo)? edit,
+    required TResult orElse(),
+  }) {
+    if (edit != null) {
+      return edit(todo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Create value) create,
+    required TResult Function(_Delete value) delete,
+    required TResult Function(_Edit value) edit,
+  }) {
+    return edit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Create value)? create,
+    TResult? Function(_Delete value)? delete,
+    TResult? Function(_Edit value)? edit,
+  }) {
+    return edit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
+    TResult Function(_Edit value)? edit,
+    required TResult orElse(),
+  }) {
+    if (edit != null) {
+      return edit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Edit implements TodoTasksEvent {
+  const factory _Edit(final TodoModel todo) = _$_Edit;
+
+  TodoModel get todo;
+  @JsonKey(ignore: true)
+  _$$_EditCopyWith<_$_Edit> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

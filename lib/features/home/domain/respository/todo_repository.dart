@@ -4,6 +4,7 @@ import '../../data/model/todo_model.dart';
 
 abstract class TodosRepository {
   TodosRepository(Object object);
+  Future<Either<String, List<TodoModel>>> editTodo(TodoModel todo);
 
   Future<Either<String, List<TodoModel>>> fetchTodos();
   Future<Either<String, List<TodoModel>>> deleteTodo(String id);

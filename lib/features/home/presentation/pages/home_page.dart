@@ -16,6 +16,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _textController = TextEditingController();
+  final _editController = TextEditingController();
 
   void _showDialog() {
     showDialog(
@@ -94,12 +95,59 @@ class _MyHomePageState extends State<MyHomePage> {
                             : const Icon(Icons.circle_outlined),
                         trailing: data.isEmpty
                             ? const SizedBox.shrink()
-                            : IconButton(
-                                onPressed: () {
-                                  context.read<TodoTasksBloc>().add(
-                                      TodoTasksEvent.delete(data[index].id));
-                                },
-                                icon: const Icon(Icons.delete_outline)),
+                            : Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        _editController.text =
+                                            data[index].description;
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              title: const Text('Edit task'),
+                                              content: TextField(
+                                                controller: _editController,
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  child: const Text('Cancel'),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                                TextButton(
+                                                  child: const Text('Ok'),
+                                                  onPressed: () {
+                                                    context
+                                                        .read<TodoTasksBloc>()
+                                                        .add(TodoTasksEvent
+                                                            .edit(TodoModel(
+                                                                id: data[index]
+                                                                    .id,
+                                                                description:
+                                                                    _editController
+                                                                        .text
+                                                                        .trim())));
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      icon: const Icon(Icons.edit)),
+                                  IconButton(
+                                      onPressed: () {
+                                        context.read<TodoTasksBloc>().add(
+                                            TodoTasksEvent.delete(
+                                                data[index].id));
+                                      },
+                                      icon: const Icon(Icons.delete_outline)),
+                                ],
+                              ),
                         title: data.isEmpty
                             ? Center(
                                 child: Text('No Todo Tasks Found Yet',

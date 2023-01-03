@@ -10,6 +10,8 @@ import '../../../../../core/utils/constants.dart';
 
 abstract class TodoLocalDataSource {
   Future<List<TodoModel>> fetchTodos();
+  Future<List<TodoModel>> editTodo(TodoModel todo);
+
   Future<List<TodoModel>> deleteTodo(String id);
   Future<List<TodoModel>> addTodo(TodoModel todo);
 }
@@ -78,6 +80,34 @@ class LocalDataSourceImpl implements TodoLocalDataSource {
       } else {
         preferences.setString(Consts.todos, jsonEncode([todo.toMap()]));
         return [todo];
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<TodoModel>> editTodo(TodoModel todo) async {
+    try {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      final response = preferences.getString(Consts.todos);
+      if (response != null) {
+        final todos = jsonDecode(response) as List;
+        List<TodoModel> list =
+            (todos).map((e) => TodoModel.fromJson(e)).toList();
+
+        int index = list.indexWhere((element) => element.id == todo.id);
+
+        list[index].description = todo.description;
+
+        preferences.setString(
+            Consts.todos, jsonEncode(list.map((e) => e.toMap()).toList()));
+
+        debugPrint(jsonEncode(list.map((e) => e.toMap()).toList().toString()));
+
+        return list;
+      } else {
+        throw Exception();
       }
     } catch (e) {
       rethrow;

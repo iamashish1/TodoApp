@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/features/home/data/data_sources/local/local_data_source.dart';
 import 'package:todo_app/features/home/domain/usecase/delete_todo.dart';
+import 'package:todo_app/features/home/domain/usecase/edit_todo.dart';
 import 'package:todo_app/features/home/domain/usecase/get_todos.dart';
 import 'package:todo_app/features/home/presentation/bloc/bloc/todo_tasks_bloc.dart';
 
@@ -15,11 +16,13 @@ Future<void> init() async {
   sl.registerFactory<TodoTasksBloc>(
     () => TodoTasksBloc(
       createTodo: sl(),
+      editTodo: sl(),
       getTodos: sl(),
       deleteTodo: sl()
     ),
   );
 sl.registerLazySingleton(()=>DeleteTodo(sl()));
+sl.registerLazySingleton(()=>EditTodo(sl()));
   sl.registerLazySingleton(()=>AddTodo(sl()));
   sl.registerLazySingleton(() => GetTodos(sl()));
   sl.registerLazySingleton<TodosRepository>(
